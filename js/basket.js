@@ -12,8 +12,6 @@ const price = document.querySelector('.price-one')
 const price_of_1 = 749
 const price_for_all = document.querySelector('.price-all')
 
-console.log(number.innerHTML)
-
 minus.addEventListener('click', () =>{
     if (parseInt(number.innerHTML) > 1){
         number.innerHTML = parseInt(number.innerHTML) - 1  
