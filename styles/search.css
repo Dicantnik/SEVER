@@ -299,6 +299,7 @@ a:visited{
 }
 
 .upper{
+    position: relative;
     display: flex;
     justify-content: space-between;
     margin-left: 230px;
@@ -306,17 +307,9 @@ a:visited{
 
 }
 
-.input{
-    position: relative;
-}
-
-.input::after{
-    content: url('/images/search.svg');
+.serchsvg{
     position: absolute;
-    height: 20px;
-    top: 5px;
-    right: 15px;
-
+    left: 365px;
 }
 
 .search{
@@ -383,6 +376,9 @@ a:visited{
 .filter-product-name{
     width: 140px;
     height: 20px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
 }
 
 .arrow-down{
@@ -395,7 +391,7 @@ a:visited{
 .products{
     display: flex;
     flex-wrap: wrap;
-    gap: 60px;
+    gap: 30px 60px;
 }
 
 .products a{
@@ -480,4 +476,232 @@ a:visited{
 .item svg{
     width: 20px;
     margin: 0 auto;
+}
+
+
+
+@media (max-width: 500px) {
+    
+    .header{
+        height: 50px;
+        border-width: 5px;
+    }
+
+    .container{
+        max-width: 330px;
+        margin: 0 auto;
+    }
+
+    .head-cont{
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+    }
+
+    .burger{
+        width: 45px;
+        height: 50px;
+        margin-right: 0;
+    }
+
+    .burgerbtn{
+        width: 25px;
+        height: 26px;
+    }
+
+    .burger-line{
+        position: absolute;
+        width: 25px;
+        height: 4px;
+        background-color: #fff;
+        border-radius: 2px;
+        transform: translateY(-50%);
+        top: 50%;
+        left: 0;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .burgerbtn::after,
+    .burgerbtn::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #FFFFFF;
+        border-radius: 2px;
+        transition: all 0.5s ease-in-out;
+    }
+   
+    .nav-block{
+        display: none;
+    }
+
+    .logo{
+        width: 60px;
+        height: 50px;
+    }
+
+    .profile{
+        width: 45px;
+        height: 50px;
+    }
+
+    .profile-icon{
+        width: 25px;
+        height: 26px;
+    }
+
+    .profile-icon img{
+        width: 25px;
+        height: 26px;
+    }
+
+
+
+        
+    .main{
+        padding-top: 13px;
+    }
+
+    .upper{
+        margin-left: 115px;
+    }
+
+    .serchsvg{
+        left: 80px;
+        height: 10px;
+        width: 10px;
+    }
+
+    .search{
+        font-size: 10px;
+        line-height: 15px;
+        width: 100px;
+        height: 15px;
+        padding: 0px 10px;
+    }
+
+    .sort-upper{
+        width: 95px;
+        height: 15px;
+        gap: 0px;
+    }
+
+    .sort-for{
+        width: 80px;
+        height: 15px;
+        font-size: 8px;
+        line-height: 15px;
+
+    }
+
+    .sort-arrow{
+        width: 15px;
+        height: 15px;
+    }
+    .sort-arrow svg{
+        display: block;
+        width: 15px;
+        height: 15px;
+    }
+
+
+    .content{
+        margin-top: 7px;
+        gap: 15px;
+    }
+
+    .filters{
+        gap: 10px;
+    }
+
+    .filter-product{
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 100px;
+        height: 20px;
+        gap: 10px;
+    }
+
+    .filter-product-name{
+        width: 70px;
+        height: 10px;
+        font-size: 10px;
+        line-height: 10px;
+    }
+
+    .arrow-down{
+        width: 10px;
+        height: 10px;
+    }
+
+    .products{
+        gap: 15px 10px;
+    }
+
+    .product{
+        width: 100px;
+        height: 170px;
+        padding: 5px 10px 10px 10px;
+    }
+
+    .product .img{
+        width: 80px;
+        height: 80px;
+    }
+
+    .product-name{
+        width: 85px;
+        height: 40px;
+        font-size: 10px;
+        line-height: 13px;
+        margin-top: 5px;
+    }
+
+    .price{
+        width: 80px;
+        height: 10px;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 10px;
+    }
+
+    .product .old-price{
+        width: 80px;
+        height: 10px;
+        font-size: 10px;
+        line-height: 10px;
+        margin-top: 5px;
+    }
+
+    .product .new-price{
+        width: 80px;
+        height: 10px;
+        font-size: 12px;
+        line-height: 10px;
+        margin-top: 10px;
+    }
+
+    .pages{
+        width: 150px;
+        margin: 70px auto 40px;
+        gap: 5px;
+    }
+
+    .item{
+        width: 20px;
+        height: 20px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .item svg{
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin: 0 auto;
+    }
+
 }
