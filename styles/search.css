@@ -411,7 +411,7 @@ a:visited{
 .product .img{
     width: 180px;
     height: 180px;
-    background: url('/images/imagefarbman.jpg');
+    background: url('/SEVER/images/imagefarbman.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
