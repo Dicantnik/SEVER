@@ -192,6 +192,8 @@ body{
 
 .item-profile a{
     text-decoration: none;
+    position: relative;
+    color: #093B58;
 }
 
 a:visited{
@@ -269,7 +271,7 @@ a:visited{
 .filter-item a{
     text-decoration: none;
     position: relative;
-    color: #093B58
+    color: #093B58;
 }
 
 .filter-item a::before {
