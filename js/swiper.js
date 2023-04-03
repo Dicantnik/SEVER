@@ -21,7 +21,7 @@
             spaceBetween: 50,
             },
 
-            1440: {
+            500: {
             centeredSlides: false,
             spaceBetween: 30,
             slidesPerView: 4,
