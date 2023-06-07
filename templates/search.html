@@ -1,0 +1,250 @@
+{% extends 'baseblue.html'%}
+{% load static %}
+
+{% block links %}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
+{% endblock %}
+
+{% block title %}
+    <title>Search</title>
+{% endblock %}
+{% block content %}
+    <div class="container main">
+
+        <div class="upper">
+                <form method="GET">
+                    <input class="search" type="text" name="search" placeholder="Пошук">
+                    <svg class="serchsvg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.3799 17.0192L14.6424 12.9898C14.1524 12.5492 13.6286 12.3467 13.2055 12.3661C14.3236 11.0561 14.9993 9.35671 14.9993 7.49921C14.9993 3.35733 11.6411 -0.000793457 7.49927 -0.000793457C3.35739 -0.000793457 -0.000732422 3.35733 -0.000732422 7.49921C-0.000732422 11.6411 3.35739 14.9992 7.49927 14.9992C9.35677 14.9992 11.0561 14.3236 12.3661 13.2055C12.3468 13.6286 12.5493 14.1523 12.9899 14.6423L17.0193 19.3798C17.7093 20.1461 18.8361 20.2111 19.5236 19.5236C20.2111 18.8361 20.1468 17.7092 19.3799 17.0192ZM7.49989 12.4998C4.73864 12.4998 2.49989 10.2611 2.49989 7.49983C2.49989 4.73858 4.73864 2.49983 7.49989 2.49983C10.2611 2.49983 12.4999 4.73858 12.4999 7.49983C12.4999 10.2611 10.2611 12.4998 7.49989 12.4998Z" fill="black"/>
+                    </svg>
+                </form>
+                    
+            <!-- <div class="sort-upper">
+                <div class="sort-for">
+                    Впорядкувати за
+                </div>
+                <div class="sort-arrow">
+                    <svg  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.75781 5L9.5 10.7422L15.2422 5L17 6.75781L9.5 14.2578L2 6.75781L3.75781 5Z" fill="white"/>
+                    </svg>  
+                </div>
+            </div>-->
+        </div>
+
+        <div class="content">
+            <form class="filters" method="GET">
+                <div>
+                    <div class="filter-product">
+                        <div class="filter-product-name">
+                            Виробник
+                        </div>
+                        <div class="arrow-down">
+                            <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.75 0L16 12.4051L28.25 0L32 3.79747L16 20L0 3.79747L3.75 0Z" fill="black"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="filter-propeties">
+                        <ul class="filter-items">
+                            <li class="filter-property"><label><input type="checkbox" name="maker" value="Farbman">Farbman</label></li>
+                            <li class="filter-property"><label><input type="checkbox" name="maker" value="Kolorit">Kolorit</label></li>
+                            <li class="filter-property"><label><input type="checkbox" name="maker" value="Colortree">Colortree</label></li>
+                            <li class="filter-property"><label><input type="checkbox" name="maker" value="Tikkurila">Tikkurila</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="filter-product">
+                        <div class="filter-product-name">
+                            Тип поверхні
+                        </div>
+                        <div class="arrow-down">
+                            <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.75 0L16 12.4051L28.25 0L32 3.79747L16 20L0 3.79747L3.75 0Z" fill="black"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="filter-propeties">
+                        <ul class="filter-items">
+                            <li class="filter-property"><label><input type="checkbox" name="surface" value="Бетон">Бетон</label></li>
+                            <li class="filter-property"><label><input type="checkbox" name="surface" value="Дерево">Дерево</label></li>
+                            <li class="filter-property"><label><input type="checkbox" name="surface" value="Метал">Метал</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="filter-product">
+                        <div class="filter-product-name">
+                            Категорії
+                        </div>
+                        <div class="arrow-down">
+                            <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.75 0L16 12.4051L28.25 0L32 3.79747L16 20L0 3.79747L3.75 0Z" fill="black"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="filter-propeties">
+                        <ul class="filter-items">
+                            <li class="filter-property"><label><input type="checkbox" name="category" value="Фарба">Фарба</label></li>
+                            <li class="filter-property"><label><input type="checkbox" name="category" value="Лак">Лак</label></li>
+                            <li class="filter-property"><label><input type="checkbox" name="category" value="Емаль">Емаль</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--<div class="filter-product">
+                    <div class="filter-product-name">
+                        Ціна
+                    </div>
+                    <div class="arrow-down">
+                        <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.75 0L16 12.4051L28.25 0L32 3.79747L16 20L0 3.79747L3.75 0Z" fill="black"/>
+                        </svg>
+                    </div>
+                </div>-->
+                <input type="submit" value="Пошук" class="submit">
+            </form>
+            <div class="products">
+
+                {% for product in products %}
+                    <a href="{% url 'sever_1:product' product.id %}">
+                        <div class="product">
+                            <div class="img">
+                                <img src={{ product.image.url }}>
+                            </div>
+                            <div class="product-name">{{ product.name }}</div>
+                            {% if product.old_price %}
+                                <div class="old-price">Ціна: {{ product.old_price }} грн</div>
+                                <div class="new-price">Ціна: {{ product.new_price }} грн</div>
+                            {% else %}
+                                <div class="price">Ціна: {{ product.new_price }} грн</div>
+                            {% endif %}
+                        </div>
+                    </a>
+                {% endfor %}
+                <a href="/SEVER/pages/product.html">
+                    <div class="product">
+                        <div class="img">
+                        </div>
+                        <div class="product-name">Фарба Farbmann Acryl Fassade 5</div>
+                        <div class="price">Ціна: 749 грн</div>
+                    </div>
+                </a>
+                <a href="/SEVER/pages/product.html">
+                    <div class="product">
+                        <div class="img">
+                        </div>
+                        <div class="product-name">Фарба ґрунтувальна Farbmann Struktur Grund S</div>
+                        <div class="price">Ціна: 1099 грн</div>
+                    </div>
+                </a>
+                <a href="/SEVER/pages/product.html">
+                    <div class="product">
+                        <div class="img">
+                        </div>
+                        <div class="product-name">Фарба Tikkurila Joker</div>
+                        <div class="price">Ціна: 579 грн</div>
+                    </div>
+                </a>
+                <a href="/SEVER/pages/product.html">
+                    <div class="product">
+                        <div class="img">
+                        </div>
+                        <div class="product-name">Емаль Tikkurila Miranol</div>
+                        <div class="price">Ціна: 849 грн</div>
+                    </div>
+                </a>
+                <a href="/SEVER/pages/product.html">
+                    <div class="product">
+                        <div class="img"></div>
+                        <div class="product-name">Фарба Tikkurila Harmony (Тіккуріла Гармонія)</div>
+                        <div class="old-price">Ціна: 549 грн</div>
+                        <div class="new-price">Ціна: 489 грн</div>
+                    </div>
+                </a>
+                <a href="/SEVER/pages/product.html">
+                    <div class="product">
+                        <div class="img"></div>
+                        <div class="product-name">Фарба Tikkurila Siro Himmea (Тіккуріла Сіро Хіммея)</div>
+                        <div class="old-price">Ціна: 839 грн</div>
+                        <div class="new-price">Ціна: 699 грн</div>
+                    </div>
+                </a>
+                <a href="/SEVER/pages/product.html">
+                    <div class="product">
+                        <div class="img"></div>
+                        <div class="product-name">Фарба Tikkurila Betolux Akva</div>
+                        <div class="old-price">Ціна: 379 грн</div>
+                        <div class="new-price">Ціна: 249 грн</div>
+                    </div>
+                </a>
+                <a href="/SEVER/pages/product.html">
+                    <div class="product">
+                        <div class="img"></div>
+                        <div class="product-name">Фарба покривна Tikkurila Argentum 20</div>
+                        <div class="old-price">Ціна: 849 грн</div>
+                        <div class="new-price">Ціна: 749 грн</div>
+                    </div>
+                </a>      
+            </div>         
+        </div>
+        
+        <div class="menu">
+            <div class="filter-cont">
+                <div class="menu-title">Виробник</div>
+                    <ul class="filter">
+                        <li class="filter-item"><a href="{% url 'sever_1:search' %}?maker=Farbman">Farbmann</a></li>
+                        <li class="filter-item"><a href="{% url 'sever_1:search' %}?maker=Kolorit">Kolorit</a></li>
+                        <li class="filter-item"><a href="{% url 'sever_1:search' %}?maker=Colortree">Colortree</a></li>
+                        <li class="filter-item"><a href="{% url 'sever_1:search' %}?maker=Tikkurila">Tikkurila</a></li>
+                    </ul>
+            </div>
+            <div class="split"></div>
+            <div class="filter-cont">
+                <div class="menu-title">Тип поверхні</div>
+                    <ul class="filter">
+                        <li class="filter-item"><a href="{% url 'sever_1:search' %}?surface=Бетон">Бетон</a></li>
+                        <li class="filter-item"><a href="{% url 'sever_1:search' %}?surface=Дерево">Дерево</a></li>
+                        <li class="filter-item"><a href="{% url 'sever_1:search' %}?surface=Метал">Метал</a></li>
+                    </ul>
+            </div>
+            <div class="split"></div>
+            <div class="filter-cont">
+                <div class="menu-title">Категорії</div>
+                    <ul class="filter">
+                        <li class="filter-item"><a href="{% url 'sever_1:search' %}?category=Фарби">Фарби</a></li>
+                        <li class="filter-item"><a href="{% url 'sever_1:search' %}?category=Лаки">Лаки</a></li>
+                        <li class="filter-item"><a href="{% url 'sever_1:search' %}?category=Емаль">Емаль</a></li>
+                    </ul>
+            </div>
+        </div>
+        <div class="menu-profile">
+            <ul class="list-profile">
+                    {% if user.is_authenticated %}
+                    <li class="item-profile"><a href="{% url 'sever_1:profile' %}">Профіль</a></li>
+                    <li class="item-profile"><a href="{% url 'users:logout' %}">Вийти</a></li>
+                    {% else %}
+                    <li class="item-profile"><a href="{% url 'users:register' %}">Зареєструватись</a></li>
+                    <li class="item-profile"><a href="{% url 'users:login' %}">Вхід</a></li>
+                    {% endif %}
+                    <li class="item-profile"><a href="{% url 'sever_1:basket' %}">Кошик</a></li>
+            </ul>
+        </div>
+        <div class="pages">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">...</div>
+            <div class="item">10</div>
+            <div class="item">
+                <svg width="21" height="30" viewBox="0 0 21 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.182922 26.4844L3.98039 30L20.1829 15L3.98039 0L0.182922 3.51562L12.588 15L0.182922 26.4844Z" fill="white"/>
+                </svg>    
+            </div>
+        </div>
+    </div>
+{% endblock %}  
+{% block js%}
+    <script src="{% static 'js/header.js' %}"></script>
+    <script src="{% static 'js/filters.js' %}"></script>
+{% endblock %}

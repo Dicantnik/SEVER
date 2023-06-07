@@ -1,0 +1,49 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {% block links %}
+    {% endblock %}
+
+    {% block title%}
+    {% endblock %}
+</head>
+    <body>
+        <header class="header">
+            <div class="container head-cont">
+                <div class="burger">
+                    <button class="burgerbtn">
+                        <span class="burger-line">
+                        </span>
+                    </button>
+                </div>
+                <a href="{% url 'sever_1:main' %}">
+                    <img src="{% static 'images/logoblue.svg' %}" alt="logo" class="logo">
+                </a>
+                <div class="nav-block">
+                    <ul class="nav">
+                        <li class="nav-list"><a href="{% url 'sever_1:main' %}#sale">Акції</a></li>
+                        <li class="nav-list"><a href="{% url 'sever_1:main' %}#about">Про нас</a></li>
+                        <li class="nav-list"><a href="{% url 'sever_1:main' %}#contacts">Контакти</a></li>
+                    </ul>
+                </div>
+                <div class="profile">
+                    <div class="profile-icon">
+                        <img src="{% static 'images/profile.svg' %}" alt="logo">
+                    </div>
+                </div>
+            </div>
+        </header> 
+        {% block content %}
+        {% endblock %}
+        {% block js %}
+        {% endblock %}
+
+    </body>
+</html>

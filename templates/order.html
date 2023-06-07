@@ -1,0 +1,66 @@
+{% extends 'baseblue.html' %}
+{% load static %}
+
+{% block links %}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/order.css' %}">
+{% endblock %}
+
+
+{% block title%}
+    <title>Order</title>
+{% endblock %}
+{% block content %}
+    <div class="container content">
+            {% for product in products %}
+                <p> {{product.product.name}} </p> 
+                <p> {{product.number}} </p>
+            {% endfor %}
+        
+        <div class="menu">
+                <div class="filter-cont">
+                    <div class="menu-title">Виробник</div>
+                        <ul class="filter">
+                            <li class="filter-item"><a href="{% url 'sever_1:search' %}?maker=Farbman">Farbmann</a></li>
+                            <li class="filter-item"><a href="{% url 'sever_1:search' %}?maker=Kolorit">Kolorit</a></li>
+                            <li class="filter-item"><a href="{% url 'sever_1:search' %}?maker=Colortree">Colortree</a></li>
+                            <li class="filter-item"><a href="{% url 'sever_1:search' %}?maker=Tikkurila">Tikkurila</a></li>
+                        </ul>
+                </div>
+                <div class="split"></div>
+                <div class="filter-cont">
+                    <div class="menu-title">Тип поверхні</div>
+                        <ul class="filter">
+                            <li class="filter-item"><a href="{% url 'sever_1:search' %}?surface=Бетон">Бетон</a></li>
+                            <li class="filter-item"><a href="{% url 'sever_1:search' %}?surface=Дерево">Дерево</a></li>
+                            <li class="filter-item"><a href="{% url 'sever_1:search' %}?surface=Метал">Метал</a></li>
+                        </ul>
+                </div>
+                <div class="split"></div>
+                <div class="filter-cont">
+                    <div class="menu-title">Категорії</div>
+                        <ul class="filter">
+                            <li class="filter-item"><a href="{% url 'sever_1:search' %}?category=Фарби">Фарби</a></li>
+                            <li class="filter-item"><a href="{% url 'sever_1:search' %}?category=Лаки">Лаки</a></li>
+                            <li class="filter-item"><a href="{% url 'sever_1:search' %}?category=Емаль">Емаль</a></li>
+                        </ul>
+                </div>
+        </div>
+        <div class="menu-profile">
+            <ul class="list-profile">
+                {% if user.is_authenticated %}
+                <li class="item-profile"><a href="{% url 'sever_1:profile' %}">Профіль</a></li>
+                <li class="item-profile"><a href="{% url 'users:logout' %}">Вийти</a></li>
+                {% else %}
+                <li class="item-profile"><a href="{% url 'users:register' %}">Зареєструватись</a></li>
+                <li class="item-profile"><a href="{% url 'users:login' %}">Вхід</a></li>
+                {% endif %}
+                <li class="item-profile"><a href="{% url 'sever_1:basket' %}">Кошик</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}        
+        <script src="{% static 'js/header.js' %}"></script>
+{% endblock %}

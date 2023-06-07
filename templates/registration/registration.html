@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+    <title>Registration</title>
+</head>
+<body>
+    <header class="header">
+        <a href="{% url 'sever_1:main' %}">
+            <img src="{% static 'images/logowhite.svg'%}" alt="logo" class="logo">
+        </a>
+    </header>
+    <div class="registr">
+        Реєстрація
+    </div>
+    <form method="post" action="{% url 'users:register' %}" class="data">
+        {% csrf_token %}
+        {% if form.errors %}
+            <p>{{ from.errors.error }}</p>
+        {% endif %}
+         <label class="label">
+            Логін
+        </label>
+        {{ form.username }}
+        <!--<input type="text" class="input">-->
+        <label class="label">
+            Пароль
+        </label>
+        {{ form.password1 }}
+        <!--<input type="text" class="input">-->
+        <label class="label">
+            Підтвердження паролю
+        </label>
+        {{ form.password2 }}
+        <!--<input type="text" class="input"> -->
+
+        <input type="submit" class="input">
+    </form>
+    
+</body>
+</html
