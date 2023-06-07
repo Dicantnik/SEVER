@@ -11,12 +11,11 @@
 {% endblock %}
 {% block content %}
     <div class="container content">
-        <p> {{user.username}} {{user.id}} </p>
+        <p class="username">{{user.username}}</p>
         <div class="orders">
             {% for order in orders %}
-            <a href="{% url 'sever_1:order' order.id %}">
+            <a class="block-order" href="{% url 'sever_1:order' order.id %}">
                 <div class="order">
-                    <p> {{order.id}}</p>
                     <p> {{order.time}} </p>
                 </div>
             </a>

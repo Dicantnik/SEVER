@@ -12,10 +12,26 @@
 {% endblock %}
 {% block content %}
     <div class="container content">
+        <p class="username">{{user.username}}</p>
+        <div class="box-products">
             {% for product in products %}
-                <p> {{product.product.name}} </p> 
-                <p> {{product.number}} </p>
+            <div class="one-product">
+                <a href="{% url 'sever_1:product' product.product.id %}"> <img class="image" src={{ product.product.image.url }} alt=""> </a>
+                <div class="params">
+                    <p class="name">  {{product.product.name}} </p> 
+                    <p class="number"> Кількість: {{product.number}} </p>
+                    <p class="color"> Колір: {{product.color}} </p>
+                    <p class="capacity"> Об'єм: {{product.capacity}} </p>
+                    <div class="prices">
+                        {% if product.product.old_price %}
+                        <p class="old_price">  {{product.product.old_price}} </p>
+                        {% endif %}
+                        <p class="new_price">  {{product.product.new_price}} </p>    
+                    </div>
+                </div>
+            </div>
             {% endfor %}
+        </div>
         
         <div class="menu">
                 <div class="filter-cont">

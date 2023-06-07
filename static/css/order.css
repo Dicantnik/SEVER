@@ -295,7 +295,74 @@ a:visited{
 .content{
     position: relative;
     box-sizing: border-box;
-    padding: 35px 0px 50px 0px;
+}
+
+
+.username{ 
+    margin-top: 30px;
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+
+.box-products {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.one-product {
+    position: relative;
+    box-sizing: border-box;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    background-color: #fff;
+    color: #093B58;
+    height: 300px;
+}
+
+.one-product a {
+    height: 100%;
+
+}
+
+.image {
+    height: 100%;
+    width: 250px;
+}
+
+.params{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+}
+
+.name{
+    font-size: 48px;
+}
+
+.number, .color, .capacity {
+    font-size: 20px;
+}
+
+.prices{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.old_price {
+    font-size: 20px;
+    text-decoration: line-through;
+    text-decoration-color: red ;
+}
+
+.new_price {
+    font-size: 32px;
 }
 
 a:visited{
